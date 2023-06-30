@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:time_picker_spinner_pop_up_dialog/time_picker_spinner_pop_up_dialog.dart';
+import 'package:time_picker_spinner_pop_up_dialog/time_picker_spinner_pop_up.dart';
+
 void main() {
   runApp(const MyApp());
 }
