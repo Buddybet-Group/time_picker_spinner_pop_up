@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:time_picker_spinner_pop_up/time_picker_spinner_pop_up.dart';
-
+import 'package:time_picker_spinner_pop_up_dialog/time_picker_spinner_pop_up_dialog.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -45,21 +43,23 @@ class _MyHomePageState extends State<MyHomePage> {
           Positioned(
             left: 30,
             top: 60,
-            child: TimePickerSpinnerPopUp(
-              mode: CupertinoDatePickerMode.date,
-              initTime: DateTime.now(),
-              minTime: DateTime.now().subtract(const Duration(days: 10)),
-              maxTime: DateTime.now().add(const Duration(days: 10)),
-              barrierColor: Colors.black12, //Barrier Color when pop up show
-              minuteInterval: 1,
-              padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
-              cancelText: 'Cancel',
-              confirmText: 'OK',
-              pressType: PressType.singlePress,
-              timeFormat: 'dd/MM/yyyy',
-              // Customize your time widget
-              // timeWidgetBuilder: (dateTime) {},
-              onChange: (dateTime) {
+            child: TimePickerSpinnerPopUpDialog(
+              time: DateTime.now(),
+              minutesInterval: 1,
+              secondsInterval: 1,
+              is24HourMode: false,
+              isShowSeconds: false,
+              highlightedTextStyle: const TextStyle(
+                fontSize: 15,
+                color: Colors.white,
+                fontWeight: FontWeight.w700,
+              ),
+              spacing: 15,
+              itemHeight: 35,
+              isForce2Digits: true,
+              alignment: Alignment.center,
+              onTimeChange: (final dateTime) {},
+              onSubmit: (final dateTime) {
                 // Implement your logic with select dateTime
               },
             ),
