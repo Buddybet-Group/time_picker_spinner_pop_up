@@ -1,5 +1,4 @@
-import 'dart:math';
-import 'package:flutter/cupertino.dart';
+part of time_picker_spinner_pop_up_dialog;
 
 class ItemScrollPhysics extends ScrollPhysics {
   /// Creates physics for snapping to item.

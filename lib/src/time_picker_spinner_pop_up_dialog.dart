@@ -1,7 +1,4 @@
-library time_picker_spinner_pop_up_dialog;
-
-import 'package:flutter/material.dart';
-import 'scroll_util.dart';
+part of time_picker_spinner_pop_up_dialog;
 
 class TimePickerSpinnerPopUpDialog extends StatefulWidget {
   final DateTime? time;
@@ -42,11 +39,10 @@ class TimePickerSpinnerPopUpDialog extends StatefulWidget {
       : super(key: key);
 
   @override
-  TimePickerSpinnerPopUpDialogState createState() =>
-      TimePickerSpinnerPopUpDialogState();
+  State<StatefulWidget> createState() => _TimePickerSpinnerPopUpDialog();
 }
 
-class TimePickerSpinnerPopUpDialogState
+class _TimePickerSpinnerPopUpDialog
     extends State<TimePickerSpinnerPopUpDialog> {
   ScrollController hourController = ScrollController();
   ScrollController minuteController = ScrollController();
