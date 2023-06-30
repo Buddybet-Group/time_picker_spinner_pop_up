@@ -14,10 +14,9 @@ Here are some supported style:
 ###### Short implementation:
 
 ```dart
-        TimePickerSpinnerPopUp(
-          mode: CupertinoDatePickerMode.time,
-          initTime: DateTime.now(),
-          onChange: (dateTime) {
+        TimePickerSpinnerPopUpDialog(
+          time: DateTime.now(),
+          onTimeChange: (final dateTime) {
             // Implement your logic with select dateTime
           },
         )
@@ -27,24 +26,26 @@ Here are some supported style:
 ###### Full implementation:
 
 ```dart
-        TimePickerSpinnerPopUp(
-          mode: CupertinoDatePickerMode.date,
-          initTime: DateTime.now(),
-          minTime: DateTime.now().subtract(const Duration(days: 10)),
-          maxTime: DateTime.now().add(const Duration(days: 10)),
-          barrierColor: Colors.black12, //Barrier Color when pop up show
-          minuteInterval: 1,
-          padding : const EdgeInsets.fromLTRB(12, 10, 12, 10),
-          cancelText : 'Cancel',
-          confirmText : 'OK',
-          pressType: PressType.singlePress,
-          timeFormat: 'dd/MM/yyyy',
-          // Customize your time widget
-          // timeWidgetBuilder: (dateTime) {},
-          onChange: (dateTime) {
-          // Implement your logic with select dateTime
-          },
-        )
+            TimePickerSpinnerPopUpDialog(
+               time: DateTime.now(),
+               minutesInterval: 1,
+               secondsInterval: 1,
+               is24HourMode: false,
+               isShowSeconds: false,
+               highlightedTextStyle: const TextStyle(
+                  fontSize: 15,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w700,
+               ),
+               spacing: 15,
+               itemHeight: 35,
+               isForce2Digits: true,
+               alignment: Alignment.center,
+               onTimeChange: (final dateTime) {},
+               onSubmit: (final dateTime) {
+               // Implement your logic with select dateTime
+               },
+            ),
 ```
 
 ## License
